@@ -6,19 +6,35 @@
 </head>
 
 <main>
-  <h1>Post Title</h1>
-  <h2>The subtitle, if you want it</h2>
-  <h4>Today's Date</h4>
+  <h1>DBC Blog</h1>
+  <h2>Phase 0 </h2>
+  <h4>Week 1 10/04/2015</h4>
 
   <section>
     <p>
-      Your first paragraph goes here. I'm using Web 2.0 Ipsum to add content. Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Nuvvo koofers oooooc voxy klout jaiku palantir flickr insala zinch napster oooj, airbnb mzinga vimeo yuntaa balihoo plickers whrrl edmodo appjet kippt. Yoono imvu hulu eduvant blekko imvu ebay voki napster skype, hipmunk zinch wesabe bubbli ning meebo bitly zlio. Fleck elgg ideeli disqus rovio zillow sifteo blyve jabber, bitly geni zoho foodzie qeyno twones klout jiglu, hipmunk jaiku balihoo plickers heekya eskobo yuntaa. Sococo whrrl plickers movity whrrl zinch voki nuvvo meebo, quora heroku unigo kno wufoo jibjab woopra, groupon yuntaa spock mzinga jumo meebo movity.
+      In the first week of Dev Bootcamp, we were introduced to using the command line interface for communicating with our computers.We were also introduced to version control using git and hosting our projects on GitHub. I want to explain what I learned this week.
     </p>
+
+    <h5><i> Why learn the command line interface?</i></h5>
+
     <p>
-        Lijit groupon ning stypi eskobo blyve ning shopify oooooc, meebo groupon prezi ebay voxy bitly diigo. Spock ifttt skype hipmunk movity whrrl bebo oooj empressr, disqus insala palantir bitly dropio zimbra zinch oooooc etsy, klout spock insala quora omgpop trulia jibjab. Sifteo dogster ebay grockit geni scribd bitly ning unigo, plickers voki mzinga tumblr kaboodle mozy whrrl woopra udemy, foodzie joukuu elgg twitter shopify akismet rovio. Kosmix eduvant woopra dopplr balihoo ning bebo akismet, boxbe vimeo kosmix shopify zappos bitly geni loopt, qeyno disqus sococo squidoo wikia octopart.
+        If you have never used a computer before the 1990s, then the command line interface (cli) will appear to be an anachronism. Most computers come with a GUI (graphical user interface) that gives you a nice visualization of your file/directory structure. If you want to move a file from one directory to another, you usually just drag and drop. Similarly, if you want to rename a file, you just right-click and type in a new name. Why would you want to type in 'mv new-directoy/ file-name'? The answer is that you can accomplish this with one line of text, whereas for dragging and dropping, you have to (i) right click on the file and hold it while (ii) dragging it to the new folder (and hope you don't release the right mouse button) until (iii) you reach the destination folder (which may be off-screen) when you may release the right mouse button. Compare typing one line of text, with three mouse-actions. If you are a casual user of your computer, then it probably doesn't matteer. Do what's more conveninet. However, if you are a developer or a data scientist who has to deal with many (hundreds of) files, then using your mouse to manipulate each file is not feasible. This is where the cli becomes your new best friend. You can use the cli to write scripts that will automate tasks such as the ones described. A few other advantages of the cli over GUIs include: searching through files using regular expressions (as opposed to having to open and inspect files), redirecting output of programs into files (as opposed to onlt seeing out on your screen), and the cli doesn't change when you switch computers or other operating systems (whereas each new version of an operating system may come with a new GUI that initially takes some getting used to). There are other advantages, but I am still new to this environment so I have not learned enough to appreciate them yet.
     </p>
+
+    <h5><i> Why learn git?</i></h5>
+
     <p>
-        Kazaa meevee eduvant gsnap movity kosmix kazaa klout jumo, trulia unigo groupon wakoopa spock knewton glogster heroku oooj, ning imvu appjet eskobo zillow twitter rovio. Glogster chegg voxy greplin dopplr voki foodzie xobni weebly odeo, sococo zynga knewton loopt palantir lala blyve tumblr blekko, twones akismet plaxo kippt meebo zillow zooomr insala. Oovoo imeem napster divvyshot zinch imeem voxy shopify, fleck kazaa zinch lanyrd boxbe joost wakoopa nuvvo, orkut elgg heekya sifteo scribd napster. Yammer yoono groupon dopplr cloudera nuvvo eduvant klout, voxy groupon disqus eduvant oooj greplin.
+        We learn to use git to enable version control. Imagine that you are a conscientious programmer. You have a program that works as intended, but want to add some enhancements. As a conscientious programmer, you would make a backup copy of the current file and then proceed to change the working copy. Suppose, you've made an enhancement and it work as intended. Great! Go ahead and make a new backup copy of your file and add another enhancement. Keep doing this until you're done. You have exerted a lot of energy devoted to keeping your file intact. Now suppose your program has a catastrophic bug due to one of these modifications. Did you cleverly name each new file so that you know exactly which file to revert back to, to undo this bug (or better yet, were you disciplined enough to maintain a README file detailing the changes made in each updated file)? This where git can help.
+    </p>
+
+    <p>
+       With git, you can easily save multiple versions of your file (by 'adding' and 'commiting'). One of the benefits of commiting is that you include a short message describing any changes you've made. These 'commits' are kept in a git log. If you need to restore an earlier version of the file, you can do so with a simple command - no need to take time to create backup copies of your files. Another benefit of the log, is that you can track changes made to the file without having to maintain a separate README file.
+    </p>
+
+     <h5><i> Why use GitHub to store your code?</i></h5>
+
+    <p>
+        Now imagine that you are collaborating on a project with several other developers. What happens if you and someone else have made changes to (copies of) the same file. How do you reconcile the conflicting changes? How do you merge these into one clean file? This where GitHub comes too the rescue. GitHub is a site that hosts your project files. You and your collaborators can 'clone' a copy of the 'master' project (stored on GitHub) to your local machine. Once there, you may freely experiment with modify the project code without fear of damamging the working 'master' copy stored on GitHub. When you are ready, you 'commit' your revisions to GitHub. If there are any conflicts between your files and another collaborator's, you can copare the differences and come to an agreement as to how to merge the files. These then can be merged into the master project.
     </p>
 
       <!-- copy and paste as many sections as you want to add paragraphs -->
