@@ -1,0 +1,22 @@
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+a {
+	text-align: center;
+	display: block;
+    margin: 0 auto;
+}
+
+p {
+	font-family: serif;
+	padding: 0 1em 1em 1em
+}
