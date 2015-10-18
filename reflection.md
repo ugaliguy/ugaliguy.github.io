@@ -1,6 +1,6 @@
 You can the live site here:
 
-![Live Site](http://ugaliguy.github.io/)
+[Live Site](http://ugaliguy.github.io/)
 
 
 #### What did you learn about CSS padding, borders, and margin by doing this challenge?
