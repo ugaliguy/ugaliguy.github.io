@@ -18,5 +18,13 @@ a {
 
 p {
 	font-family: serif;
-	padding: 0 1em 1em 1em
+	padding: 0 1em 1em 1em;
+}
+
+p.center {
+	text-align: center;
+}
+
+li.inline {
+	display: inline;
 }
