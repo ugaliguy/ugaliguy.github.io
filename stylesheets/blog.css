@@ -28,3 +28,14 @@ p.center {
 li.inline {
 	display: inline;
 }
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}
+
+.var_name {
+	font-family: monospace;
+}
