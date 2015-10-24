@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+  <title>Chris Gomes' DBC Blog Phase 0 Week 4</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <meta charset="UTF-8">
+</head>
+
+<main>
+    <div>
+      <h1>DBC Blog</h1>
+      <h2>Phase 0 </h2>
+    </div>
+
+    <article>    
+    <div>
+
+      <h4>Week 4 10/24/2015</h4>
+
+    </div>
+
+    <div>
+
+      <p>
+        In the fourth week of Dev Bootcamp, we reviewed basic Ruby. For this entry , I want to discuss arrays and hashes. Please note that this is only a brief discussion. I do not cover the methods associated with arrays and hashes.
+    </p>
+
+    <h4> What are arrays and hashes?</h4>
+
+    <p>
+        An <em>array</em> is a list of objects indexed by the integers 0, 1, 2, ..., n-1 (called <em>indices</em>), where n is the number of objects in the array. For example:
+    </p>   
+
+    <pre>
+      empty_array = [] # This is an empty array
+      scores = [74, 81, 83, 75, 97, 98, 61, 59, 38, 100, 99, 82] # This is an array of integers - e.g. test scores
+      dist = [10.5, 11.2, 14.9, 12.7] # This is an array of floats - e.g. miles walked in one day
+      metal = ['Mayhem', 'Portal', '1349', 'Marduk', 'Yob'] # This is an array of strings - e.g. your favorite metal bands
+      stuff = [2.78, 'Pickle Juice', false, [2, 3, 5, 7, 11]]  # This is an array of objects that are not all of the same type
+    </pre> 
+
+    <p>
+        The things to notice are that arrays can be empty and the members of an array do not need to be of the same type. In fact, in the last example we see that arrays can be objects inside of arrays. Members of an array are accessed through their indices. For example ...
+    </p>
+
+    <pre>
+      scores[0] = 74 # Note that what most would consider to be the first element of scores is actually the first element is the <em>0th</em> element
+                     # of scores.
+      dist[1] = 11.2  # What most would consider to be the second element is actually the <em>1st</em> element of dist.
+      empty_array[0] = nil # Since this array is empty there is nothing to return
+      metal[5] = nil # Remember that even though metal has five elements, these are labeled by the indices 0, 1, 2, 3, 4.
+                     # There is no <em>5th</em> element of metal.
+    </pre>
+
+    <p>
+        Confusion about indices leads to a lot of bugs in programming.
+    </p>
+
+    <p>
+        A <em>hash</em> is a list of pairs of objects. The first object of the pair is the <em>key</em>. The second object is the <em>value</em>. This pair is denoted {key => value}. For example: 
+    </p>
+
+    <pre>
+      metal_hash = {} # This a new, empty hash which can be populated as follows:
+
+      metal_hash['Mayhem'] = 'Norway'
+      metal_hash['Portal'] = 'Australia'
+      metal_hash['1349'] = 'Norway'
+      metal_hash['Marduk'] = 'Sweden'
+      metal_hash['Yob'] = 'United States'
+
+      # The resulting hash is ...
+
+      {"Mayhemm"=>"Norway", "Portal"=>"Australia", "1349"=>"Norway", "Marduk"=>"Sweden", "Yob"=>"United States"}
+
+      # where the key is the band name and the value is the home country of the band.
+
+    </pre>
+
+    <p>
+        One very important thing to notice is that the keys must be unique, however the values do not need to be unique. In the above example, each key appears exactly once, but the value <span class="var_name">Norway</span> appears more than once. As with arrays, there are no resticitons on the types of objects that can be either keys or values.
+    </p>
+
+    <h4> When should I use an array and when should I use a hash?</h4>
+
+    <p>
+        Choosing an array or a hash depends on what you want to do with your data. If you want to be able to search and retrieve data, first you need to find the location of your data, then retrieve it. The amount of time it takes to search an array depends on the size of the array, whereas searching in a hash is indepenedent of the size of the hash. In more formal language, the complexity of searching in an array (of length n) is O(n) - aka linear time. The complexity of searching in a hash is O(1) - aka constant time. In other owrds, the bigger the array, the longer it takes to search, On the other hand, it takes the same amount of time to search in a hash, no matter how big the hash may be. So, for a lot of data-driven applications, hashes are probably prefereable.
+    </p>
+
+    <p>
+        However, some tasks are easier with arrays, than hases. For example, if you need to perform a task that requires iterating through a list of data, then it is easy to iterate through an array. Let us compare the array <span class="var_name">metal</span> with the hash <span class="var_name">metal_hash</span>.
+    </p>
+
+    <pre>
+      metal.each do |band|
+        p band
+      end
+
+      # This gives us the ouput ...
+
+      "Mayhem"
+      "Portal"
+      "1349"
+      "Marduk"
+      "Yob"
+
+      # Iterating over a hash returns the output
+      metal_hash.each_pair { |key, value| puts "#{key} maps to #{value}"}
+
+      Mayhem maps to Norway
+      Portal maps to Australia
+      1349 maps to Norway
+      Marduk maps to Sweden
+      Yob maps to United States
+
+      # In this instance, we got lucky. Iterating over a hash return the pairs in random order.
+
+    </pre>
+  
+    <p>
+      A rough guideline then is to use arrays for iteration and hashes for making your data searchable.
+    </p>
+
+    </div>
+    </article>
+
+    <div> 
+    <footer>
+        <nav> 
+            <ul class="nav">
+              <a href='http://ugaliguy.github.io/blog/blog-template.html'>Blog Index</a> 
+            </ul>
+        </nav>
+    </footer>
+    </div>
+</main>
