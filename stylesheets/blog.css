@@ -18,6 +18,7 @@ a {
 
 p {
 	font-family: serif;
+	font-size: larger;
 	padding: 0 1em 1em 1em;
 }
 
@@ -29,7 +30,7 @@ li.inline {
 	display: inline;
 }
 
-pre {
+pre code {
     display: block;
     font-family: monospace;
     white-space: pre;
