@@ -32,11 +32,13 @@ li.inline {
 
 pre code {
     display: block;
-    font-family: monospace;
+    font-family: monospace;	
+    font-size: larger;
     white-space: pre;
-    margin: 1em 0;
+    /*margin: 1em 0; */
 }
 
 .var_name {
 	font-family: monospace;
+	font-size: inherit;
 }

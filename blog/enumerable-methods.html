@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+  <title>Chris Gomes' DBC Blog Phase 0 Week 5</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<main>
+    <div>
+      <h1>DBC Blog</h1>
+      <h2>Phase 0 </h2>
+    </div>
+
+    <article>    
+    <div>
+
+      <h4>Week 5 11/01/2015</h4>
+
+    </div>
+
+    <div>
+
+      <p>
+        In the fifth week of Dev Bootcamp, we looked a bit more in depth into Ruby. In particular, we had our first taste of classes. For this entry, I want to discuss how the <span class="var_name">Enumerable</span> module can enrich your classes. As usual, this is not an exhaustive survey, but rather a taste of what you can do.
+    </p>
+
+    <h4> The <span class="var_name">Enumerable</span> module</h4>
+
+    <p>
+        When we first learn to program (in any language), ywe learn to write code that repeats/iterates a task - usually by means of a for-loop 
+        or some other control structure. For example,
+    </p>   
+
+    <pre>
+      <code>
+          for i in 1..5
+              p "Splat! "
+          end
+
+          # This will output
+
+          "Splat! "
+          "Splat! "
+          "Splat! "
+          "Splat! "
+          "Splat! 
+      </code> 
+    </pre>
+
+    <p>
+        So far, so good, but what if we wanted to print out the contents of an array. For example,
+    </p>
+
+    <pre>
+      <code>
+          metal = ["Portal", "1349", "Yob", "Marduk"]
+          for i in 1..metal.length
+              p metal[i-1]
+          end
+
+          # This will output
+
+          "Portal"
+          "1349"
+          "Yob"
+          "Marduk"
+      </code>
+    </pre>
+
+    <p>
+        This example leads to the same output, a list of things printed one at a time, but notice that the code is slightly more complicated. 
+        We have to make sure we have gotten the array's indices correct. However, in Ruby, we learn that arrays have a special method 
+        <span class="var_name"> each </span> that allows us to iterate without worring about the indices.
+    </p>
+
+    <pre>
+      <code>
+          metal = ["Portal", "1349", "Yob", "Marduk"]
+          metal.each do |band|
+              p band
+          end
+
+          # This will output
+
+          "Portal"
+          "1349"
+          "Yob"
+          "Marduk"
+      </code>
+    </pre>
+
+    <p>
+        We get the same output, but at greater simplicity. This is because the class Array has the <span class="var_name"> each </span> method. However, there are other things we can do to an array. For example, we can apply <span class="var_name"> any? </span> to see if an object is an element of the array. These methods are not unique to arrays, but can be givien to other classes by including the <span class="var_name">Enumerable</span> module in 
+        the class definition and then defining an instance method called <span class="var_name">each</span>.
+    </p>
+
+    <pre>
+      <code>
+          class Class_Name {
+            include Enumerable
+            def each
+            # put code here
+            end
+
+            # defint the rest of your class
+        }
+      </code>
+    </pre>
+
+    <p>
+        By including the <span class="var_name">Enumerable</span> module in our class, we gain access to a wide variety of methods, such as the searching and sorting methods that we see for arrays. In other languages, we would have to construct our own object-specific methods. Let's look at a particular method.
+    </p>
+
+    <h4>Example <span class="var_name">Enumerable#group_by</span></h4>
+
+    <p>
+       The <span class="var_name">group_by</span> method takes a block of code and returns a hash, where the block is executed for each object. For each unique block return value, the returned hash gets a key; the value for that key is an array of all the objects for which the block returned that value.
+       For example,
+
+    <pre>
+      <code>
+          metal = ["Portal", "1349", "Yob", "Marduk", "Mayhem", "Cultes des Ghoules", "Blut Aus Nord", "Tsjuder", "Dodheimsgard"]
+
+          # We can ask if any bands in the above array have the letter 'M'
+          metal.group_by {|band| band =~/M/}
+
+          # The resulting hash is  
+
+          {nil=>["Portal", "1349", "Yob", "Cultes des Ghoules", "Blut Aus Nord", "Tsjuder", "Dodheimsgard"], 0=>["Marduk", "Mayhem"]}
+
+          # where the first array is consists of those bans that do not have an 'M' (i.e. band =~/M/ is false), while the second array consists of # those 
+          # that do. I need to figure out how to specify a meaningful key. In this case, 'nil' means 'false' and '0' means 'true'.
+
+          # Another example -  sorry, I tried to find something other than an array to apply group_by to.
+          # I couldn't make it work for hashes (yet!)
+
+          (1..16).group_by { |i| i%7 }   
+
+          # The output is hash of integer keys (between 0 <= i <= 6 - i.e. possible remaiinders upon division by 7) 
+          # whose values are arrays of integers with remainder i.
+          {1=>[1, 8, 15], 2=>[2, 9, 16], 3=>[3, 10], 4=>[4, 11], 5=>[5, 12], 6=>[6, 13], 0=>[7, 14]}
+
+
+
+      </code>
+    </pre>
+  
+    <p>
+      Once we start constructing our own classes, then we should be able to figure out good implementations of the methods offered to us 
+      by the <span class="var_name">Enumerable</span> module.
+    </p>
+
+    </div>
+    </article>
+
+    <div> 
+    <footer>
+        <nav> 
+            <ul class="nav">
+              <a href='http://ugaliguy.github.io/blog/blog-template.html'>Blog Index</a> 
+            </ul>
+        </nav>
+    </footer>
+    </div>
+</main>
+</body>
