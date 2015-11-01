@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
 </head>
 
+<body>
 <main>
     <div>
       <h1>DBC Blog</h1>
@@ -32,24 +33,28 @@
     </p>   
 
     <pre>
-      empty_array = [] # This is an empty array
-      scores = [74, 81, 83, 75, 97, 98, 61, 59, 38, 100, 99, 82] # This is an array of integers - e.g. test scores
-      dist = [10.5, 11.2, 14.9, 12.7] # This is an array of floats - e.g. miles walked in one day
-      metal = ['Mayhem', 'Portal', '1349', 'Marduk', 'Yob'] # This is an array of strings - e.g. your favorite metal bands
-      stuff = [2.78, 'Pickle Juice', false, [2, 3, 5, 7, 11]]  # This is an array of objects that are not all of the same type
-    </pre> 
+      <code>
+        empty_array = [] # This is an empty array
+        scores = [74, 81, 83, 75, 97, 98, 61, 59, 38, 100, 99, 82] # This is an array of integers - e.g. test scores
+        dist = [10.5, 11.2, 14.9, 12.7] # This is an array of floats - e.g. miles walked in one day
+        metal = ['Mayhem', 'Portal', '1349', 'Marduk', 'Yob'] # This is an array of strings - e.g. your favorite metal bands
+        stuff = [2.78, 'Pickle Juice', false, [2, 3, 5, 7, 11]]  # This is an array of objects that are not all of the same type
+      </code> 
+    </pre>
 
     <p>
         The things to notice are that arrays can be empty and the members of an array do not need to be of the same type. In fact, in the array <span class="var_name">stuff</span> we see that arrays can be objects inside of arrays. Members of an array are accessed through their indices. For example ...
     </p>
 
     <pre>
-      scores[0] = 74 # Note that what most would consider to be the first element of scores is actually the first element is the <em>0th</em> element
-                     # of scores.
-      dist[1] = 11.2  # What most would consider to be the second element is actually the <em>1st</em> element of dist.
-      empty_array[0] = nil # Since this array is empty there is nothing to return
-      metal[5] = nil # Remember that even though metal has five elements, these are labeled by the indices 0, 1, 2, 3, 4.
-                     # There is no <em>5th</em> element of metal.
+      <code>
+        scores[0] = 74 # Note that what most would consider to be the first element of scores is actually the first element is the <em>0th</em> element
+                       # of scores.
+        dist[1] = 11.2 # What most would consider to be the second element is actually the <em>1st</em> element of dist.
+        empty_array[0] = nil # Since this array is empty there is nothing to return
+        metal[5] = nil # Remember that even though metal has five elements, these are labeled by the indices 0, 1, 2, 3, 4.
+                       # There is no <em>5th</em> element of metal.
+      </code>
     </pre>
 
     <p>
@@ -61,20 +66,21 @@
     </p>
 
     <pre>
-      metal_hash = {} # This a new, empty hash which can be populated as follows:
+      <code>
+        metal_hash = {} # This a new, empty hash which can be populated as follows:
 
-      metal_hash['Mayhem'] = 'Norway'
-      metal_hash['Portal'] = 'Australia'
-      metal_hash['1349'] = 'Norway'
-      metal_hash['Marduk'] = 'Sweden'
-      metal_hash['Yob'] = 'United States'
+        metal_hash['Mayhem'] = 'Norway'
+        metal_hash['Portal'] = 'Australia'
+        metal_hash['1349'] = 'Norway'
+        metal_hash['Marduk'] = 'Sweden'
+        metal_hash['Yob'] = 'United States'
 
-      # The resulting hash is ...
+       # The resulting hash is ...
 
-      {"Mayhemm"=>"Norway", "Portal"=>"Australia", "1349"=>"Norway", "Marduk"=>"Sweden", "Yob"=>"United States"}
+       {"Mayhemm"=>"Norway", "Portal"=>"Australia", "1349"=>"Norway", "Marduk"=>"Sweden", "Yob"=>"United States"}
 
-      # where the key is the band name and the value is the home country of the band.
-
+       # where the key is the band name and the value is the home country of the band.
+      </code>
     </pre>
 
     <p>
@@ -92,29 +98,31 @@
     </p>
 
     <pre>
-      metal.each do |band|
-        p band
-      end
+      <code>
+        metal.each do |band|
+           p band
+        end
 
-      # This gives us the ouput ...
+       # This gives us the ouput ...
 
-      "Mayhem"
-      "Portal"
-      "1349"
-      "Marduk"
-      "Yob"
+        "Mayhem"
+        "Portal"
+        "1349"
+        "Marduk"
+        "Yob"
 
-      # Iterating over a hash returns the output
-      metal_hash.each_pair { |key, value| puts "#{key} maps to #{value}"}
+       # Iterating over a hash returns the output
+        metal_hash.each_pair { |key, value| puts "#{key} maps to #{value}"}
 
-      Mayhem maps to Norway
-      Portal maps to Australia
-      1349 maps to Norway
-      Marduk maps to Sweden
-      Yob maps to United States
+        Mayhem maps to Norway
+        Portal maps to Australia
+        1349 maps to Norway
+        Marduk maps to Sweden
+        Yob maps to United States
 
-      # In this instance, we got lucky. Iterating over a hash returns the pairs in random order.
+       # In this instance, we got lucky. Iterating over a hash returns the pairs in random order.
 
+      </code>
     </pre>
   
     <p>
@@ -134,3 +142,4 @@
     </footer>
     </div>
 </main>
+</body>
