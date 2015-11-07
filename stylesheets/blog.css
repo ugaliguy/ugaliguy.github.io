@@ -42,3 +42,9 @@ pre code {
 	font-family: monospace;
 	font-size: larger;
 }
+
+.center{
+   width: 85%; 
+   margin:0 auto;
+   text-align:left;
+}
