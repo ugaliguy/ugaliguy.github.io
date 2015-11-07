@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+  <title>Chris Gomes' DBC Blog Phase 0 Week 6</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<main>
+    <div>
+      <h1>DBC Blog</h1>
+      <h2>Phase 0 </h2>
+    </div>
+
+    <article>    
+    <div>
+
+      <h4>Week 6 11/06/2015</h4>
+
+    </div>
+
+    <div>
+
+      <p>
+        In the sixth week of Dev Bootcamp, we looked a bit more in depth into classes and nested data-structures. For this entry, I want to discuss classes and give an illustrative example.
+    </p>
+
+    <h4> The idea of a class</h4>
+
+    <p>
+        Classes are what we use to model real world objects. Think of how you might describe an object. You would use adjectives (nouns) to specify particular qualities of the objects - e.g. ocean water is cool, blue, and salty. However, you can also describe an object by verbs - by what it does or has done to it. Water allows energy to be transmitted in the form of waves. Water freezes. Water causes Sharknados. A <em>class</em> is an abstraction of an object specified by its <em>instance variables</em> (i.e. nouns) and <em>class methods</em> (i.e. verbs). We construct a class (called <span class="var_name"> Splat</span>) as follows:
+    </p>   
+
+    <pre>
+      <code>
+          Class Splat {
+
+          def initialize(var1, var2, ...)
+            @var1 = var1
+            @var2 = var2
+              .
+              .
+              .
+          end
+
+          # The rest of your method defintions go here
+        }
+      </code> 
+    </pre>
+
+    <p>
+        Let us note a few things: First, class names are captalized; next, classes have an <em>initialize</em> method. This is the method you use to 
+        create new new objects of type <span class="var_name"> Splat</span>. To create a new <span class="var_name"> Splat</span>-object (called 
+       <span class="var_name"> shirleys_splat</span> for example), you would declare 
+
+    </p>
+
+    <pre>
+      <code>
+          shirleys_splat = Splat.new(var1, var2, ...)
+      </code>
+    </pre>
+
+    <p>
+        Please note that the variables <span class="var_name"> var1, var2, ... </span> are optional. The variables denoted <span class="var_name"> @var1, @var2, ... </span> are called <em>instance variables</em>. Instance variables are 'visible' only inside of the class itself. You cannot alter instance variables from outside of a class (unless you define a class method that allows you to so). Instance variables differ from local variables in that local variables are only visible inside the method they appear in. Instance variables visible in <em>all</em> methods defined iin the class. On other words, once you have declared an instance variable in a class method, you are free to define other class methods that also use that instance variable. For example, suppose that <span class="var_name"> Splat </span> has the following methods
+    </p>
+
+    <pre>
+      <code>
+          def method1
+            @var1 = 0
+            @var2 = 'Gravy!'
+            var3 = 22.5
+
+            # Put code here to make method1 do something
+          end
+
+          def method2
+            @var1 = 0
+            var4 = "Bug spray"
+
+            # Put code here to make method2 do something
+          end
+      </code>
+    </pre>
+
+    <p>
+        In the above methods <span class="var_name"> @var1 </span> is an instance variable and so can appear in methods.
+        On the other hand, <span class="var_name"> var4 </span> is local and can only be used in <span class="var_name">method2</span> 
+        and not in <span class="var_name">method1</span>. There are other concepts related to classes (such as <em>class variables</em>), 
+        that I won't go into. This is only intended to be a first exposure to these ideas.
+    </p>
+
+    <h4> An example of a class</h4>
+
+    <p>
+        Let's consider a super villain. At the very least, a super villain can be specified by a name (e.g. The Harmulator), type (e.g. mad scientist, superpowered psychopath), special power (e.g. heat vision, super garlic breath) and by costume color. Some actions related to super villains include:  
+               <section class="center">    
+                <ul>
+                    <li>taking hostages</li>
+                    <li>belittling minions</li>
+                    <li>blowing things up</li>
+                    <li>making demands</li>
+                </ul>
+               </section> 
+    </p>
+
+
+    <p>
+       With this in mind, let's construct our basic super villain class.
+    </p>
+
+    <pre>
+      <code>
+        class SuperVillain 
+
+          def initialize(name, type, super_power, costume_color)
+            @name = name
+            @type = type
+            @super_power = super_power
+            @costume_color = costume_color
+            @hostages = []
+            @to_be_demolished = []
+            @proclamations = ["I hearby ban Nutella!", "Bring me ... One Million Kumquats!"]
+          end
+
+          def take_hostage(hostage)
+            puts "#{hostage}! You have been taken hostage"   
+            return @hostages + hostage.to_a   # This allows both individual hostages and groups of hostages to be taken             
+          end
+
+          def belittle_minion()
+            print "Your mother wears necropants and your father invented crab shampoo!"
+          end
+
+          def demolish(monument)
+            puts "Murdiddily-urder #{monument}"
+            @to_be_demolished + monument.to_a
+          end
+
+          def make_proclamation()
+            print @proclamations.shuffle[0]
+          end
+
+        end
+      </code>
+    </pre>
+  
+    <p>
+      Let's construct a new super villain:
+    </p>  
+
+    <pre>
+      <code>
+       puts harm = SuperVillain.new("The Harmulator", "mad scientist", "super halitosis", "Blood Red")
+       puts harm.take_hostage(["Willow","Wesley",["J.Crew Models"]])
+       puts harm.belittle_minion()
+       puts harm.demolish(["Star Bucks", "Trump Tower"])
+       puts harm.make_proclamation()
+
+       # with resulting output
+       => nil
+       ["Willow", "Wesley", ["J.Crew Models"]]! You have been taken hostage
+       Willow
+       Wesley
+       J.Crew Models
+       Murdiddily-urder ["Star Bucks", "Trump Tower"]
+       Star Bucks
+       Trump Tower
+       Bring me ... One Million Kumquats!
+      </code>
+    </pre>
+
+    <p>
+      Notice that all of the variables are instance variables, however, that does not always need to be the case. There are some issues that I have 
+      ignored. For example, how do you print out or change the values of the instance variables? In other languages you would have to explicitly define 
+      'get' and 'set' methods. However, in Ruby there is a shortcut called the <span class="var_name">attr_*</span> family of methods. For example, in 
+      <span class="var_name">SuperVillain</span>, adding the line <span class="var_name">attr_reader :name</span> gives you a method that will return the value of <span class="var_name">name</span>, while adding <span class="var_name">attr_reader :costume_color</span> gives you a method that allows you to change the value of <span class="var_name">costume_color</span>. There are many other aspects of classes that I have not talked about. I only wanted to you a brief first exposure to this topic.
+    </p>
+
+    </div>
+    </article>
+
+    <div> 
+    <footer>
+        <nav> 
+            <ul class="nav">
+              <a href='http://ugaliguy.github.io/blog/blog-template.html'>Blog Index</a> 
+            </ul>
+        </nav>
+    </footer>
+    </div>
+</main>
+</body>
