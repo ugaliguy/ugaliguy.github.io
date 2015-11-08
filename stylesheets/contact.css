@@ -38,7 +38,10 @@ ul.nav{
     /*text-align:center;*/
 }
 
-
+header ul {
+    line-height: 10%;
+    /*font-size: larger;*/
+}
 
 
 
