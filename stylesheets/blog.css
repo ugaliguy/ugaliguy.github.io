@@ -26,6 +26,10 @@ p.center {
 	text-align: center;
 }
 
+p.last {
+    padding-bottom: 3%;
+}
+
 li.inline {
 	display: inline;
 }
@@ -78,4 +82,8 @@ footer {
     margin-right: 3%;
     float: right;
 /*    width: 45%;*/
+}
+
+a.text_link {
+    display: inline;
 }

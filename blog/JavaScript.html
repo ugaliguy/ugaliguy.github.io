@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+  <title>Chris Gomes' DBC Blog Phase 0 Week 6</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<main>
+    <div>
+      <h1>DBC Blog</h1>
+      <h2>Phase 0 </h2>
+    </div>
+
+    <article>    
+    <div>
+
+      <h4>Week 7 11/15/2015</h4>
+
+    </div>
+
+    <div>
+
+      <p>
+        In the seventh week of Dev Bootcamp, we were introduced to JavaScript. For this entry, I want to give a brief comparison between Ruby classes and JavaScript constructor functions.
+    </p>
+
+    <h4> Two ways to define an object</h4>
+
+    <p>
+        In object-oriented programming (OOP), the goal is to create objects and to internalize/hide as much of the behavior of the object inside of its definition. Then, we define methods/functions which allow objects of different types to interact. However, objects of one type cannot perform the behaviors of objects of a different type. For example, 
+        a cat object can meow and a dog object can bark, but a cat object cannot bark at a mail-carrier and a dog object cannot run up a tree and hiss at invisible demon squirrels.
+    </p>   
+
+    <p>
+       There are two ways to define new objects in OOP: Class-based OOP and Prototype-based OOP. In Class-based OOP, you define a Class for an object. A Class encapsulates all of an objects decriptors (nouns/properties/instance variables) and actions (verbs/methods). One of the methods in the Class is the initialize method. This is the method used to 
+       create new instances of the class. Classes are immutable. You cannot add new properties to a particular instance of the object without add that property to the Class iself. On the other hand, in Prototype-bassed OOP, you construct a new object through an <em>object literal</em> declaration - see the next section for an example. Unlike Class-based object, Prototype-based objects are mutable. You can add new properties to an instance of an object. Some examples of Class-based languagees include: C++, Java, PHP, and Ruby. Examples of Prototype-based languages include: JavaScript and (after adding the necessary packages) Perl, Python, and R.
+    </p>    
+  
+
+    <h4> An example of a Prototyped object</h4>
+
+    <p>
+        Last week, I gave an <a class="text_link" href='http://ugaliguy.github.io/blog/ruby-classes.html'>example</a> of a Super Villain Class in Ruby. We would create this same object in JavaScript as follows:
+    </p>
+
+
+    <pre>
+      <code>
+      // One method is to construct an object literal ...
+
+      var superVillain = {name: "Damagonstro", 
+                          type: "nemesis", 
+                          superPower: "atomic wedgie", 
+                          costumeColor: "puce"};
+
+      // Another more standard method is to define an object constructor function
+
+      superVillain = function(name, type, superPower, costumeColor) {
+          this.name = name;
+          this.type = type;
+          this.superPower = superPower;
+          this.costumeColor = costumeColor;
+      }
+
+      // Then to construct a new super villain we declare ...
+
+      var badGuy = new superVillain("Damagonstro", "nemesis", "atomic wedgie", "puce");
+      var badGal = new superVillain("The Tenderizor", "super human", "concussive vocal fry", "neon indigo");
+
+      console.log(badGal);  //Which outputs
+
+      { name: 'The Tenderizor',
+        type: 'super human',
+        superPower: 'concussive vocal fry',
+        costumeColor: 'neon indigo' }
+
+      </code>
+    </pre>
+  
+    <p>
+      Let's focus on the object literal construction. Suppose I create <span class="var_name">badGuy</span> and 
+      <span class="var_name">badGal</span> as object literals. I can add additional properties to them as follows:
+    </p>  
+
+    <pre>
+      <code>
+      var badGuy = {name: "Damagonstro", 
+                    type: "nemesis", 
+                    superPower: "atomic wedgie", 
+                    costumeColor: "puce"};
+
+      var badGal = {name: 'The Tenderizor',
+                    type: 'super human',
+                    superPower: 'concussive vocal fry',
+                    costumeColor: 'neon indigo"};
+
+      badGal.partnerInCrime = "Damagonstro";
+      badGuy.partnerInCrime = "The Tenderizor";
+      console.log(badGal);
+      console.log(badGuy);
+
+      // Which outputs ...
+      { name: 'The Tenderizor',
+        type: 'super human',
+        superPower: 'concussive vocal fry',
+        costumeColor: 'neon indigo',
+        partnerInCrime: 'Damagonstro' }
+      { name: 'Damagonstro',
+        type: 'nemesis',
+        superPower: 'atomic wedgie',
+        costumeColor: 'puce',
+        partnerInCrime: 'The Tenderizor' }
+
+
+
+      </code>
+    </pre>
+
+    <p class="last">
+      Notice that both super villains have an extra property <span class="var_name">.partnerInCrime</span>. This shows 
+      Prototype-based OOP has much greater flexibility than Class-based OOP. Advocates for Prototype-based OOP find this to be a desirable feature. It allows a programmer to work with a few instances and then, later on, use these as prototypes for more detailed/complicated instances. This feature also allows prototypes to be altered during the running of a program. Critics argue that this is what makes Prototype-based OOP unsafe and unpredictable compared to Class-based OOP.
+    </p>
+
+    </div>
+    </article>
+
+    <div> 
+    <footer>
+        <nav> 
+            <ul class="nav">
+              <li><a href='http://ugaliguy.github.io/'>Home</li></a> 
+              <li><a href='http://ugaliguy.github.io/blog/blog-template.html'>Blog Index</li></a> 
+            </ul>
+        </nav>
+    </footer>
+    </div>
+</main>
+</body>
