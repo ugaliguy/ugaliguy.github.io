@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+  <title>Chris Gomes' DBC Blog Phase 0 Week 8</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css"> 
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<main>
+    <div>
+      <h1>DBC Blog</h1>
+      <h2>Phase 0 </h2>
+    </div>
+
+    <article>    
+    <div>
+      <h4>Week 8 11/21/2015</h4>
+
+    </div>
+
+    <div>
+
+      <p>
+      This week we were introduced to relational databases and SQL. In this week's entry, I want to talk about 
+      databases that don't follow the relational model. 
+    </p>
+
+    <h4> Some Problems with the Relational Database Model</h4>
+
+    <p>
+        Recall that a relational database (RDBMS) uses tables to store the data. Data can then be retrieved via queries 
+        written in SQL. This model was developed in the early 1970s, when the only computers were mainframes. 
+        This model evolved with the PC revolution, however, its limitations became obvious with the new architectures 
+        spawned by the Internet. 
+    </p>
+
+    <p>
+        Some problems with RDBMSs include:
+          <ol type="I">
+            <li><p>
+                  In an RDBMS, you must first design the schema before any data is entered. You must know how you want to format your data in advance. If you later decide to add another column to a table (e.g. a column for email addresses in a table of employee data designed in the 1970s), you must first update the schema and then reload the data. This is time consuming. In other words, you cannot dynamically update your data.
+                </p>
+            </li>
+            <li>
+                <p>
+                  RDBMSs cannot deal with unstructured data. The definition of an RDBMS forces you to break your data up into predefined tables. It can be very difficult to anticipate what tables you need in advance. For example, suppose you want a database that stores emails and text messages. How do you conduct meaningful searches on these things with SQL? The answer is that you can't.
+                </p>
+            </li>
+            <li>
+                 <p>
+                  RDBMSs must be stored on a single server to ensure reliability and continuous access to data. This limits 
+                  the size of your database. It also makes your database a tightly coupled system - in other words, a failure of one part of the database leads to a failure of the entire database.
+                </p>
+            </li>
+            <li>
+                 <p>
+                  Data must be retrieved using some flavor of SQL. To create programs that interact with an RDBMS, the programmer must be familiar with SQL. It is not possible to access data in the program's native language.
+                </p>
+            </li>
+          </ol>
+    </p>
+
+    <h4> NoSQL Databases</h4>
+
+    <p>
+        The response to the above problems is to use a <em>NoSQL</em> database. NoSQL stands for "Not only SQL". It refers 
+        to database models that may allow for SQL-style queries, but that don't use tables and relational algebra as the means of retrieving data. There are roughly four types of NoSQL database:
+          <ol type="I">
+              <li><p>
+                    In a <em>Key-Value</em> database, every piece of data is represented by a key-value pair (i.e. in Ruby, the data is represented by a hash). This is the simplest type of NoSQL database to implement. Clients (aka Users) can retrieve data by retrieving the key. They can update data by updating the value associated to a key, and they can delete a piece of data by deleting the key.
+                  </p>
+              </li>
+              <li>
+                  <p>
+                    In a <em>Document</em> database, key-value pairs are used for data storage, but the values are 
+                    complex data structures (e.g. XML and JSON documents). Unlike an RDMS, documents do not have to have the same structure. In an RDBMS, two different records have the same number of columns, this does not have to be the case with two different documents.
+                  </p>
+              </li>
+              <li>
+                   <p>
+                    A <em>Wide-Column</em> database is superficially similar to an RDBMS in that it uses tables with rows and columns. However, unlike relational tables where each row has a predetermined number of columns, 
+                     in a wide-column database, columns are created when entering data into the database. Wide-column databases have the advantage of being scalable - they can distributed among several servers. This makes such a database more loosely coupled - meaning that failure in one part does not lead to failure of the whole. Also, individual columns can be updated, rather than having to reload an entire database.
+                  </p>
+              </li>
+              <li>
+                   <p>
+                    A <em>Graph</em> database is used to store data that can be represented by a graph - e.g social networks, public transportation schedules, road maps. Data is stored a node in a graph. Relationships between different pieces of data are represented by edges between the nodes in the graph. Queries are made by using graph-traversal algorithms to find paths (i.e. relations) between nodes. Graph databases are easier to scale. They are useful for identifying previously unknown relationships between data points.
+                  </p>
+              </li>
+    </ol>
+
+    </p>
+
+
+     <h4> Why use a NoSQL Database?</h4>
+
+    <p class="last">
+        Relational databases have been around for many years and are the most commonly used. They are a stable technology 
+        that is well-understood and supported. They offer reliable and secure transaction processing (e.g. queries and updates) from large numbers of users connected to the database. On the other hand, NoSQL databases can be written in the programmer's native language. They are well-suited to handle unstructured data and dynamic schemas. As a consequence, they can be optimized for fast retrieval of data from complicated data structures and sets.
+
+
+    </div>
+    </article>
+
+    <div> 
+    <footer>
+        <nav> 
+            <ul class="nav">
+              <li><a href='http://ugaliguy.github.io/'>Home</li></a> 
+              <li><a href='http://ugaliguy.github.io/blog/blog-template.html'>Blog Index</li></a> 
+            </ul>
+        </nav>
+    </footer>
+    </div>
+</main>
+</body>
