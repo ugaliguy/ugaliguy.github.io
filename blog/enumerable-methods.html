@@ -29,7 +29,7 @@
     <h4> The <span class="var_name">Enumerable</span> module</h4>
 
     <p>
-        When we first learn to program (in any language), ywe learn to write code that repeats/iterates a task - usually by means of a for-loop 
+        When we first learn to program (in any language), we learn to write code that repeats/iterates a task - usually by means of a for-loop 
         or some other control structure. For example,
     </p>   
 
@@ -72,7 +72,7 @@
     <p>
         This example leads to the same output, a list of things printed one at a time, but notice that the code is slightly more complicated. 
         We have to make sure we have gotten the array's indices correct. However, in Ruby, we learn that arrays have a special method 
-        <span class="var_name"> each </span> that allows us to iterate without worring about the indices.
+        <span class="var_name"> each </span> that allows us to iterate without worrying about the indices.
     </p>
 
     <pre>
@@ -92,7 +92,7 @@
     </pre>
 
     <p>
-        We get the same output, but at greater simplicity. This is because the class Array has the <span class="var_name"> each </span> method. However, there are other things we can do to an array. For example, we can apply <span class="var_name"> any? </span> to see if an object is an element of the array. These methods are not unique to arrays, but can be givien to other classes by including the <span class="var_name">Enumerable</span> module in 
+        We get the same output, but at greater simplicity. This is because the class Array has the <span class="var_name"> each </span> method. However, there are other things we can do to an array. For example, we can apply <span class="var_name"> any? </span> to see if an object is an element of the array. These methods are not unique to arrays, but can be given to other classes by including the <span class="var_name">Enumerable</span> module in 
         the class definition and then defining an instance method called <span class="var_name">each</span>.
     </p>
 
@@ -104,7 +104,7 @@
             # put code here
             end
 
-            # defint the rest of your class
+            # define the rest of your class
         }
       </code>
     </pre>
@@ -129,9 +129,11 @@
 
           # The resulting hash is  
 
-          {nil=>["Portal", "1349", "Yob", "Cultes des Ghoules", "Blut Aus Nord", "Tsjuder", "Dodheimsgard"], 0=>["Marduk", "Mayhem"]}
+          {nil=>["Portal", "1349", "Yob", "Cultes des Ghoules", "Blut Aus Nord", "Tsjuder", "Dodheimsgard"], 
+          0=>["Marduk", "Mayhem"]}
 
-          # where the first array is consists of those bans that do not have an 'M' (i.e. band =~/M/ is false), while the second array consists of # those 
+          # where the first array is consists of those bans that do not have an 'M' (i.e. band =~/M/ is false), 
+          # while the second array consists of # those 
           # that do. I need to figure out how to specify a meaningful key. In this case, 'nil' means 'false' and '0' means 'true'.
 
           # Another example -  sorry, I tried to find something other than an array to apply group_by to.
@@ -139,7 +141,7 @@
 
           (1..16).group_by { |i| i%7 }   
 
-          # The output is hash of integer keys (between 0 <= i <= 6 - i.e. possible remaiinders upon division by 7) 
+          # The output is hash of integer keys (between 0 <= i <= 6 - i.e. possible remainders upon division by 7) 
           # whose values are arrays of integers with remainder i.
           {1=>[1, 8, 15], 2=>[2, 9, 16], 3=>[3, 10], 4=>[4, 11], 5=>[5, 12], 6=>[6, 13], 0=>[7, 14]}
 
