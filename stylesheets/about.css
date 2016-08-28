@@ -11,6 +11,10 @@ header ul {
     /*font-size: larger;*/
 }
 
+header h2 {
+    font-family: cursive;
+}
+
 aside {
     position: relative;
   /*  margin-top: 12%;*/
