@@ -16,6 +16,7 @@ main {
     position: relative;
     font-size: smaller;
     margin-top: 11%;
+    margin-bottom: 5%;
 /*    margin-left: 5%;
     float: left;*/
   /*  width: 50%;*/
@@ -45,7 +46,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 98%;
-/*    height: 69px;*/
+    /*font-size: small;*/
+    height: 2em;
 }
 
 ul.nav{
