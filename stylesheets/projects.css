@@ -26,7 +26,7 @@ section {
     position: relative;
     font-size: larger;
     padding: 2% 2% 2% 2%;
-    width: 40%;
+    width: 90%;
 }
 
 pre code {
@@ -58,19 +58,20 @@ ul.nav{
     /*text-align:center;*/
 }
 
-section.left{
+section.top{
 /*  margin-top: 8%;*/
     background-color: #FF5C5C;
     margin-left: 3%;
-    float: left;
+    /*float: left;*/
 /*    width: 45%;*/
 }
 
-section.right{
-/*  margin-top: 8%;*/
+section.bottom{
+    margin-top: 8%;
     background-color: #98FB98;
-    margin-right: 3%;
-    float: right;
+    margin-left: 3%;
+    /*float: right;*/
+    bottom: 3em;
 /*    width: 45%;*/
 }
 
